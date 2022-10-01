@@ -22,12 +22,13 @@ int s=i;
 int j=0;
 while(j<b && a[index[j]]<=c)
 {
-    if(a[index[j]]==c)
+    
+    j++;
+}
+if(a[index[j-1]]==c)
     {//printf("%d",index[j]) ;
     return index[j];
     }
-    j++;
-}
 
 if(j!=s)
 {

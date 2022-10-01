@@ -1,10 +1,16 @@
 #include<stdio.h>
+#include<math.h>
 void main()
-{int a;
-scanf("%d",&a);
-    for(int i=1;i<=a;i++)
+{float a;
+int i;
+int c;
+scanf("%f",&a);
+float b=ceil(a/2);
+//printf("%f",b);
+c=a-b;
+    for( i=1;i<=b;i++)
     {
-        for(int j=a;j>i;j--)
+        for(int j=b;j>i;j--)
         {
             printf("  ");
         }
@@ -14,17 +20,18 @@ scanf("%d",&a);
         }
         printf("\n");
     }
-    
-    for(int i=0;i<a-1;i++)
+    int l=(2*i)-1;
+    for(int z=1;z<=c;z++)
     {
-        for(int k=0;k<=i;k++)
+        for(int k=0;k<z;k++)
         {
             printf("  ");
         }
-        for(int j=0;j<a-2*i;j++)
+        for(int j=0;j<l-4;j++)
         {
             printf("* ");
         }
         printf("\n");
+        l=l-2;
     }
 }

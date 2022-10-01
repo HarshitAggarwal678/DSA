@@ -45,7 +45,7 @@ void Union(int a[],int m,int b[],int n)
 }
 int main()
 {
-    int a[5]={1,3,5,7,9};
+    int a[5]={1,3,5,9};
     int b[5]={2,3,6,8,9};
     Union(a,5,b,5);
     return 0;
