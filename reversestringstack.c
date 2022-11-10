@@ -5,17 +5,17 @@
 #define FALSE 0
 struct stack
 {
-    int item[STACKSIZE];
-    int top;
+    char item[STACKSIZE];
+    char top;
 };
 struct stack s;
 void initialise()
 {
     s.top=-1;
 }
-void push(int x)
+void push(char x)
 {
-    if(s.top==(10-1))
+    if(s.top==(STACKSIZE-1))
     {
         printf("stack overflow");
         exit(1);
@@ -36,36 +36,48 @@ int isempty()
         return FALSE;
     }
 }
-int pop()
+char pop()
 {if (isempty())
 {
     printf("stack underflow");
     exit(1);
 }
 else{
-    int x=s.item[s.top];
+    char x=s.item[s.top];
     s.top=s.top-1;
     return x;
 }
 
 }
-int stacktop()
+char stacktop()
 {
-    int x=s.item[s.top];
+    char x=s.item[s.top];
     return x;
 }
 void main()
 {
-    int x;
+    char y[10];
+    char rev[10];
+    int i=0,j=0;
     initialise();
-    push(100);
-    push(200);
-    push(300);
-pop();
-pop();
-pop();
-pop();
-pop();
+    printf("enter the string\n");
+    scanf("%s",y);
+    //printf("reversed string -->%s",y);
+    while(y[i]!='\0')
+    {
+        push(y[i]);
+        i++;
+    }
+    while(!isempty())
+    {char z;
+        z=pop();
+        //printf("\n%c",z);
+        rev[j]=z;
+        j++;
+    }
+    rev[j]='\0';
+    printf("reversed string -->%s",rev);
 
+    
 }
 
