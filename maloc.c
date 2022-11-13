@@ -30,7 +30,7 @@ void main()
     //printf("\n%u\n",sizeof(long long));
     //printf("%u",sizeof(p));
     int *zi;
-    //zi=(int*) malloc(4);
+    zi=(int*) malloc(4);
     zi[0]=10;
     zi[1]=11;
     zi[2]=12;
