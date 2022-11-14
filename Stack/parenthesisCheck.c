@@ -1,4 +1,4 @@
-//Program for Decimal to Binary Conversion
+//Program to check the validity of Parenthesized Arithmetic Expression using Stack
 #include<stdio.h>
 #include<stdlib.h>
 #define STACKSIZE 20
