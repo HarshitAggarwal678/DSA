@@ -33,7 +33,6 @@ void enqueue(struct Queue *q,char x)
     }
     q->rear++;
     q->item[q->rear]=x;
-    printf("yes\n");
 }
 /*************/
 char dequeue(struct Queue *q)
@@ -54,9 +53,6 @@ void main()
     int c=1;
     int n=0;
     initialise(&q);
-    // enqueue(&q,'A');
-    // printf("%c",dequeue(&q));
-    enqueue(&q,'A');
     printf("enter 1 to enqueue\n");
     printf("enter 2 to dequeue\n");
     printf("enter 3 to check empty\n");
@@ -69,8 +65,9 @@ void main()
             {
                 char x;
                 printf("enter the character to be enqueues\n");
-                scanf("%c",&x);
+                scanf(" %c",&x);
                 enqueue(&q,x);
+                //printf("enter the character to be enqueues\n");
                 break;
             }
             case 2:
