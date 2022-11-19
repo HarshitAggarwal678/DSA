@@ -116,10 +116,10 @@ void main()
                 p[j]=x;
                 j++;
             }
-			if(!(Isempty(&s))&&!prc(symbol,Stacktop(&s))&&Stacktop(&s)==')')
+			if(!Isempty(&s) && !prc(symbol,Stacktop(&s)) && Stacktop(&s)==')')
 				pop(&s);
 			else
-        	push(&s,symbol);
+        		push(&s,symbol);
         }
     }
     while(!Isempty(&s)&&(Stacktop(&s)!='('))
