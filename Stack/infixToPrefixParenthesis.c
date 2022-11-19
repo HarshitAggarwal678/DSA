@@ -65,7 +65,7 @@ int prc(char op1,char op2)
     {
         if(op2=='(')
         return FALSE;
-        else if(op2==')'|| op1==')')
+        else if(op2==')')//else if(op2==')'|| op1==')')
         return TRUE;
         {
 
