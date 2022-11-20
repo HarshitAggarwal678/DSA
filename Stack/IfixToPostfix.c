@@ -16,9 +16,9 @@ void initialise(struct stack *ptr)
 int Isempty(struct stack *ptr)
 {
     if (ptr->top==-1)
-        return 1;
+        return TRUE;
     else
-        return 0;
+        return FALSE;
 }
 void push(struct stack *ptr,int x)
 {
