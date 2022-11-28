@@ -34,7 +34,8 @@ void enqueue(struct Queue *q,char x)
     q->item[q->rear]=x;
 }
 char dequeue(struct Queue *q)
-{char x;
+{
+    char x;
     if(isempty(q))
     {
         printf("queue overflows");
