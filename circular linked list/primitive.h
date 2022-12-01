@@ -107,4 +107,15 @@ int DelAft(struct node**CSTART)
   free(p);
   return x;
 }
+void Traverse(struct node **CSTART)
+{
+  struct node *p;
+  p=(*CSTART)->Next;
+  while (p!=*CSTART)
+  {
+    printf("%d",p->info);
+    p=p->Next;
+  }
+  printf("%d",p->info);
+}
 
