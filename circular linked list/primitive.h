@@ -51,7 +51,7 @@ void InsEnd(struct node**CSTART,int x)
 void InsAft(struct node**CSTART,int x)
 {
   struct node *p;
-  if((*CSTART)==NULL)
+  if(*CSTART==NULL)
   {
     printf("void insertion");
     exit(1);
@@ -71,9 +71,9 @@ int DelBeg(struct node**CSTART)
   struct node *p;
   p=(*CSTART)->Next;
   (*CSTART)->Next=p->Next;
-  if((*CSTART)->Next==(*CSTART))
+  if((*CSTART)->Next==*CSTART)
   {
-    (*CSTART)=NULL;
+    *CSTART=NULL;
   }
   x=p->info;
   free(p);
@@ -84,14 +84,14 @@ int DelEnd(struct node**CSTART)
 {
   int x;
   struct node *p,*q;
-  p=(*CSTART);
-  while (p->Next!=(*CSTART))
+  p=*CSTART;
+  while (p->Next!=*CSTART)
   {
     p=p->Next; 
   }
   p->Next=(*CSTART)->Next;
-  q=(*CSTART);
-  (*CSTART)=p;
+  q=*CSTART;
+  *CSTART=p;
   x=q->info;
   free(q);
   return x;
@@ -107,6 +107,7 @@ int DelAft(struct node**CSTART)
   free(p);
   return x;
 }
+/******************************/
 void Traverse(struct node **CSTART)
 {
   struct node *p;
@@ -118,4 +119,4 @@ void Traverse(struct node **CSTART)
   }
   printf("%d",p->info);
 }
-
+/******************************/
