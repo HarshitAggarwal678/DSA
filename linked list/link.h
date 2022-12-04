@@ -28,7 +28,7 @@ void InsBeg(struct node **START,int x)
 {
   struct node *p;
   p=GetNode();
-    p->info=x;
+  p->info=x;
   p->Next=*START;
   *START=p;
 }
@@ -63,6 +63,14 @@ void InsEnd(struct node **START,int x)
     }
 }
 /*******/
+void InsAft(struct node **p,int x)
+ {
+ struct node *q;
+ q=GetNode();
+ q->info=x;
+ q->Next=(*p)->Next;
+ (*p)->Next=q;
+ }
 void Traverse(struct node **START)
 {
   struct node *p;
