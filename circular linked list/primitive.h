@@ -114,9 +114,9 @@ void Traverse(struct node **CSTART)
   p=(*CSTART)->Next;
   while (p!=*CSTART)
   {
-    printf("%d",p->info);
+    printf("%d ",p->info);
     p=p->Next;
   }
-  printf("%d",p->info);
+  printf("%d ",p->info);
 }
 /******************************/
