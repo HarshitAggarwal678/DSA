@@ -80,4 +80,5 @@ int DelBeg(struct node **head)
     DelBeg(&p);
     Traverse(&p);
     printf("%d",p->info);
+    
  }
