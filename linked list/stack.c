@@ -20,11 +20,11 @@ void main()
     push(&p,400);
     push(&p,500);
     Traverse(&p);
-    x=DelBeg(&p);
+    x=pop(&p);
     printf("\n%d",x);
-    x=DelBeg(&p);
+    x=pop(&p);
     printf("\n%d",x);
-    x=DelBeg(&p);
+    x=pop(&p);
     printf("\n%d\n",x);
     Traverse(&p);
 
