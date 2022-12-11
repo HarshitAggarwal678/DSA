@@ -100,3 +100,27 @@ while (c!=NULL)
 *start=p;
 return *start;
 }
+struct node *middle(struct node **start)
+{
+    struct node *p,*q;
+    p=*start;
+    q=p;
+    while(q!=NULL && q->Next!=NULL)
+    {
+        p=p->Next;
+        q=q->Next->Next;
+    }
+    return p;
+}
+int count(struct node **start)
+{
+  struct node *p;
+  p=*start;
+  int c=0;
+  while(p!=NULL)
+    {
+      c++;
+      p=p->Next;
+    }
+  return c;
+}
