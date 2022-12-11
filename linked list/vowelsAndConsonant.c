@@ -87,12 +87,11 @@ struct node *order(struct node **start)
   p=NULL;
   c=NULL;
   n=*start;
-  while(n->info=='a'||n->info=='e'||n->info=='i'||n->info=='o'||n->info=='u')
+  while((n!=NULL)&&(n->info=='a'||n->info=='e'||n->info=='i'||n->info=='o'||n->info=='u'))
   {
       p=n;
       c=n;
-      if(n!=NULL)
-        n=n->Next;
+      n=n->Next;
   }
   while(n!=NULL)
   {
@@ -102,24 +101,15 @@ struct node *order(struct node **start)
       {
         InsBeg(start,n->info);
         p=*start;
-        c=n;
-        if(n!=NULL)
-          n=n->Next;
+        n=n->Next;
+        DelAft(&c);  
       }
       else
       {
         InsAft(&p,n->info);
         p=p->Next;
-        if(n->Next!=NULL)
-        {
-          n=n->Next;
-          DelAft(&c);
-        }
-        else
-        {
-          DelAft(&c);
-          n=NULL;
-        }
+        n=n->Next;
+        DelAft(&c);
       }
     }
     else
@@ -134,13 +124,10 @@ void main()
 {
   struct node *p,*q;
   p=NULL;
+  InsBeg(&p,'u');
   InsBeg(&p,'i');
-  InsBeg(&p,'x');
   InsBeg(&p,'o');
-  InsBeg(&p,'d');
-  InsBeg(&p,'e');
-  InsBeg(&p,'c');
-  InsBeg(&p,'b');
+  InsBeg(&p,'y');
   InsBeg(&p,'a');
   q=order(&p);
   Traverse(&q);
