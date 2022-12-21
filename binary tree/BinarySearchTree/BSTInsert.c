@@ -108,6 +108,17 @@ int mini(struct node **root)
     //printf("%d",p->data);
     return (p->data);
 }
+int maxe(struct node **root)
+{
+    struct node *p;
+    p=(*root);
+    while(p->right!=NULL)
+    {
+        p=(p)->right;
+    }
+    //printf("%d",p->data);
+    return (p->data);
+}
 void main()
 {
     struct node *t,*q;
@@ -127,5 +138,7 @@ void main()
     else
     printf("\nelement NOT found");
     x=mini(&t);
+    printf("\n%d",x);
+    x=maxe(&t);
     printf("\n%d",x);
 }
